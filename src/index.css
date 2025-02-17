@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-twitchGrey: #f7f7f8;
+  --color-twitchPurple: #9146ff;
+}

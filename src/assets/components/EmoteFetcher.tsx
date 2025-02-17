@@ -22,8 +22,9 @@ const EmoteFetcher = () => {
 
   return (
     <>
-      <div>
+      <div className="bg-twitchPurple text-white">
         <input
+          className="bg-purple-200 text-gray-800 rounded-md"
           type="text"
           placeholder="Channel ID"
           value={channelId}
@@ -31,7 +32,12 @@ const EmoteFetcher = () => {
             setChannelId(e.target.value)
           }
         />
-        <button onClick={handleFetchEmotes}>View Channel's Emotes</button>
+        <button
+          className="bg-purple-500 hover:bg-purple-400 rounded-lg py-1 px-2 mx-5 h-12.5"
+          onClick={handleFetchEmotes}
+        >
+          View Channel's Emotes
+        </button>
         <input
           type="radio"
           id="1xBtn"
@@ -61,7 +67,7 @@ const EmoteFetcher = () => {
         <label htmlFor="4xBtn">4x Size</label>
       </div>
 
-      <div>
+      <div className="flex flex-wrap mt-4">
         {emotes.map((emote: any) => {
           const isAnimated = emote.format.includes('animated');
 
