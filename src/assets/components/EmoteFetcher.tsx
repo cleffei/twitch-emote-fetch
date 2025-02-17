@@ -12,7 +12,11 @@ const EmoteFetcher = () => {
       return;
     } else {
       const emoteInfo = await fetchEmotes(channelId);
-      setEmotes(emoteInfo);
+      if (emoteInfo) {
+        setEmotes(emoteInfo);
+      } else {
+        return null;
+      }
     }
   };
 

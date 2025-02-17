@@ -14,7 +14,12 @@ export const fetchEmotes = async (channelId: string) => {
         },
       }
     );
-    return response.data.data;
+    if (response.data.data.length === 0) {
+      console.log('This channel ID has no emotes!');
+      return null;
+    } else {
+      return response.data.data;
+    }
   } catch (error) {
     console.error('Error occurred fetching emotes\n', error);
     return [];
