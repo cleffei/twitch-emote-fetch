@@ -1,7 +1,8 @@
 import React from 'react';
+import EmoteFetcher from './assets/components/EmoteFetcher';
 
 const App: React.FC = () => {
-  return <div>Placeholder</div>;
+  return <EmoteFetcher />;
 };
 
 export default App;
