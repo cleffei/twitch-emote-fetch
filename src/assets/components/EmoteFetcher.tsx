@@ -7,6 +7,7 @@ const EmoteFetcher = () => {
 
   const handleFetchEmotes = async () => {
     if (!channelId) {
+      console.log('Channel ID field is empty!');
       return;
     } else {
       const emoteInfo = await fetchEmotes(channelId);
@@ -29,9 +30,14 @@ const EmoteFetcher = () => {
       </div>
 
       <div>
-        {emotes.map((emote: any) => (
-          <img key={emote.id} src={emote.images.url_2x} />
-        ))}
+        {emotes.map((emote: any) => {
+          const isAnimated = emote.format.includes('animated');
+          const imageUrl = isAnimated
+            ? emote.images.url_2x.replace('static/', 'animated/')
+            : emote.images.url_2x;
+
+          return <img key={emote.id} src={imageUrl} alt={emote.name} />;
+        })}
       </div>
     </>
   );
