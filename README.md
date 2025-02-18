@@ -5,3 +5,4 @@ WIP project for fetching emotes from a specified Twitch.tv channel and rendering
 ## Packages
 
 Axios
+Toastify
