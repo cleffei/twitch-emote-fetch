@@ -30,7 +30,7 @@ const EmoteFetcher = () => {
     <>
       <div className="bg-twitchPurple text-white p-4 flex flex-wrap items-center justify-center space-x-4">
         <input
-          className="bg-purple-200 text-gray-800 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="mb-4  md:mb-0 bg-purple-200 text-gray-800 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
           type="text"
           placeholder="Channel ID"
           value={channelId}
@@ -98,7 +98,7 @@ const EmoteFetcher = () => {
 
       <ToastContainer />
 
-      <div className=" max-w-2/3 mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+      <div className=" mx-2 md:max-w-2/3 md:mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
         {emotes.map((emote: any) => {
           const isAnimated = emote.format.includes('animated');
           const imageUrl = isAnimated
