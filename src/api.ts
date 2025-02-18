@@ -15,7 +15,6 @@ export const fetchEmotes = async (channelId: string) => {
       }
     );
     if (response.data.data.length === 0) {
-      console.log('This channel ID has no emotes!');
       return null;
     } else {
       return response.data.data;
