@@ -66,10 +66,15 @@ const handler: Handler = async (event, context) => {
   }
 
   const emotes = await fetchEmotes(userId);
+  if (emotes === null || emotes.length === 0) {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ emotes: [] }),
+    };
+  }
   return {
     statusCode: 200,
     body: JSON.stringify({ emotes }),
   };
-};
 
 export { handler };

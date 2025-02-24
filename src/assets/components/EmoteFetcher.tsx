@@ -14,7 +14,7 @@ const EmoteFetcher = () => {
       return;
     } else {
       const emoteInfo = await fetchEmotesByChannelName(channelId);
-      if (emoteInfo.length <= 0) {
+      if (emoteInfo.length === 0) {
         toast.warning('This channel has no emotes!', { position: 'top-right' });
         return;
       } else {
