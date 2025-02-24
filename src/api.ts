@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchEmotesByChannelName = async (channelName: string) => {
   try {
     const response = await axios.get(
-      `/api/fetchEmotes?channelName=${channelName}`
+      `https://twitch-emote-fetcher.netlify.app/.netlify/functions/fetchEmotes?channelName=${channelName}`
     );
     console.log(response.data.data);
     return response.data.data || [];
