@@ -1,6 +1,6 @@
 # Twitch Channel Emote Fetcher
 
-WIP React webapp for fetching the emotes from a specified Twitch.tv channel ID. Emotes can be rendered at their native, 2x or 4x sizes.
+WIP React webapp for fetching the emotes from a specified Twitch.tv channel name. Emotes can be rendered at their native, 2x or 4x sizes.
 
 ## How to Use
 
