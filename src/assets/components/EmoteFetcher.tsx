@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fetchEmotes } from '../../api';
+import { fetchEmotesByChannelName } from '../../api';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,10 +10,10 @@ const EmoteFetcher = () => {
 
   const handleFetchEmotes = async () => {
     if (!channelId) {
-      toast.error('Channel ID field is empty!', { position: 'top-right' });
+      toast.error('Channel name field is empty!', { position: 'top-right' });
       return;
     } else {
-      const emoteInfo = await fetchEmotes(channelId);
+      const emoteInfo = await fetchEmotesByChannelName(channelId);
       if (!emoteInfo) {
         toast.warning('This channel has no emotes!', { position: 'top-right' });
         return;
@@ -32,7 +32,7 @@ const EmoteFetcher = () => {
         <input
           className="mb-4  md:mb-0 bg-purple-200 text-gray-800 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
           type="text"
-          placeholder="Channel ID"
+          placeholder="Input Channel Name..."
           value={channelId}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setChannelId(e.target.value)
