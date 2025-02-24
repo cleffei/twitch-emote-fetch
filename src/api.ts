@@ -6,7 +6,7 @@ export const fetchEmotesByChannelName = async (channelName: string) => {
       `https://twitch-emote-fetcher.netlify.app/.netlify/functions/fetchEmotes?channelName=${channelName}`
     );
     console.log(response);
-    return response.data.data || [];
+    return response.data.emotes || [];
   } catch (error) {
     console.error('Error occurred fetching emotes\n', error);
     return [];
