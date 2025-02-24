@@ -71,11 +71,12 @@ const handler: Handler = async (event, context) => {
       statusCode: 200,
       body: JSON.stringify({ emotes: [] }),
     };
+  } else {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ emotes }),
+    };
   }
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ emotes }),
-  };
 };
 
 export { handler };
