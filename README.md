@@ -8,7 +8,6 @@ Download the source files here and add in a `.env` file to the root of the proje
 
 ## To Do:
 
-- Allow searching with channel name as well as channel ID
 - Implement local caching to prevent over-calling the Twitch API
 
 ## Packages
